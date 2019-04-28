@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="presenter"
+            type="com.zh.besseldemo.MainActivity"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFF"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="#333"
+            android:background="#EAEAEA"
+            android:gravity="center"
+            android:text="二阶贝塞尔函数"
+            android:onClick="@{()->presenter.onSecondBesselClicked()}"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textColor="#333"
+            android:background="#EAEAEA"
+            android:gravity="center"
+            android:text="三阶贝塞尔函数"
+            android:onClick="@{()->presenter.onThirdBesselClicked()}"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textColor="#333"
+            android:background="#EAEAEA"
+            android:gravity="center"
+            android:text="水波纹"
+            android:onClick="@{()->presenter.onWaveViewClicked()}"
+            />
+    </LinearLayout>
+</layout>
