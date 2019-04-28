@@ -99,6 +99,7 @@ public class BesselSecondView extends View {
 
 
         mPath.reset();
+        //起始点
         mPath.moveTo(startPointX,startPointY);
         //曲线
         mPath.quadTo(controlPointX,controlPointY,endPointX,endPointY);

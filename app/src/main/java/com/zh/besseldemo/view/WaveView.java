@@ -41,7 +41,7 @@ public class WaveView extends View implements View.OnClickListener {
         super(context, attrs);
         mPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStrokeWidth(5);
-        mPaint.setColor(Color.GRAY);
+        mPaint.setColor(Color.GREEN);
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
         imgPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -67,7 +67,7 @@ public class WaveView extends View implements View.OnClickListener {
 
         //水波纹宽度
         waveLenth=200;
-//        waveCount=screenWidth/waveLenth+2;
+        //
         waveCount = (int) Math.round(screenWidth / waveLenth + 1.5);
     }
 
@@ -78,7 +78,7 @@ public class WaveView extends View implements View.OnClickListener {
 
         mPath.reset();
         mPath.moveTo(-waveLenth+offset,startY);
-
+        //绘制贝塞尔曲线
         for (int i=0;i<waveCount;i++){
             int totalOffset=waveLenth*i+offset;
             mPath.quadTo(totalOffset-waveLenth/4*3,startY-100,totalOffset-waveLenth/2,startY);
@@ -89,7 +89,6 @@ public class WaveView extends View implements View.OnClickListener {
         mPath.lineTo(0,screenHeight);
         mPath.close();
         canvas.drawPath(mPath,mPaint);
-//        canvas.drawCircle(waveLenth/2,startY,50,imgPaint);
     }
     public void startAnimation() {
         valueAnimator= ValueAnimator.ofInt(0, waveLenth);
@@ -109,6 +108,7 @@ public class WaveView extends View implements View.OnClickListener {
         valueAnimator.start();
     }
 
+    //停止动画
     public  void  onStop(){
        if (valueAnimator!=null){
            valueAnimator.end();
